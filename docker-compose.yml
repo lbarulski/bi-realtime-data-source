@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  bi:
+    build: .
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: bi
+      POSTGRES_PASSWORD: bi
+  mysql:
+    image: mariadb:10.2
+    ports:
+    - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: bi
